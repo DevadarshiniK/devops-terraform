@@ -45,6 +45,10 @@ module "eks" {
 
     tags = {
       Name = "${var.cluster_name}-spot-nodes"
+
+      # 🔥 REQUIRED FOR AUTOSCALER
+      "k8s.io/cluster-autoscaler/enabled"            = "true"
+      "k8s.io/cluster-autoscaler/${var.cluster_name}" = "owned"
     }
   }
 }

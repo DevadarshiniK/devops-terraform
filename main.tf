@@ -20,3 +20,11 @@ module "eks" {
     Project     = "devops"
   }
 }
+
+module "autoscaler" {
+  source = "./modules/autoscaler"
+
+  cluster_name       = var.cluster_name
+  oidc_provider_arn  = module.eks.oidc_provider_arn
+  oidc_provider_url  = module.eks.oidc_provider
+}
