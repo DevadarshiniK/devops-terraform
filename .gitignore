@@ -24,6 +24,7 @@ terraform.rc
 
 # Plan files
 *.tfplan
+tfplan
 
 # Lock file (optional - include if using team workflows)
 # Uncomment if you want to ignore it
